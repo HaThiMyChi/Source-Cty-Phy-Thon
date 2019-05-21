@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style type="text/css">
+            button{
+                margin-right: 20px;
+                padding: 5px;
+            }
+            form{
+                width: 600px;
+                margin: auto;
+                text-align: center;
+            }
+            div.form-group{
+                width: 90%;
+                height: 24px;
+                margin: 5px;
+            }
+            div.form-group input{
+                float: right;
+                height: 20px;
+                width: 400px;
+            }
+            span{
+                font: 18px bold;
+                font-weight: bold;
+                float: right;
+                margin-right: 10px; 
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<form  method="POST">-->
+            <!--<h1>Chỉnh sửa thông tin cầu thủ</h1>-->
+            <!--<div class="form-group">-->
+                <!--<label>Tên cầu thủ:</label>-->
+                <!--<input type="name" class="form-control" name="name" value="{{player.name}}">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Tuổi:</label>-->
+                <!--<input type="age" class="form-control" name="age" value="{{player.age}}">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Quốc tịch:</label>-->
+                <!--<input type="national" class="form-control" name="national" value="{{player.national}}">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Vị trí:</label>-->
+                <!--<input type="position" class="form-control" name="position" value="{{player.position}}">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Lương:</label>-->
+                <!--<input type="salary" class="form-control" name="salary" value="{{player.salary}}">-->
+            <!--</div>-->
+            <!--<button type="submit" class="btn btn-primary">Cập nhật</button>-->
+        <!--</form>-->
+        <form method="POST">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa thông tin cầu thủ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label class="col-form-label">Tên:</label>
+                    <input type="text" class="form-control" id="name" name="name"  value="{{player.name}}" required minlength="2" maxlength="20">
+                  </div>
+                  <div class="form-group">
+                     <label class="col-form-label">Tuổi:</label>
+                     <input type="number" class="form-control" id="age" name="age" value="{{player.age}}" required min="1" max="10">
+                  </div>
+                  <div class="form-group">
+                     <label class="col-form-label">Quốc tịch:</label>
+                     <input type="text" class="form-control" id="national" name="national" value="{{player.national}}" required minlength="2" maxlength="20">
+                  </div>
+                  <div class="form-group">
+                     <label class="col-form-label">Vị trí:</label>
+                     <input type="text" class="form-control" id="position" name="position" value="{{player.position}}" required minlength="2" maxlength="20">
+                  </div>
+                  <div class="form-group">
+                     <label class="col-form-label">Lương:</label>
+                     <input type="number" class="form-control" id="salary" name="salary" value="{{player.salary}}" required min="1" max="10">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="submit" class="btn btn-primary" id="btn-edit" >Sửa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+    </body>
+</html>

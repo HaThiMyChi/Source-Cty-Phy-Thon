@@ -1,0 +1,89 @@
+.search-div{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.col-md-6 {
+    padding: 0px;
+}
+
+h1{
+    text-align: center;
+    color: red;
+}
+
+#button{
+    margin: 2px;
+    margin-right: 10px;
+    float: right;
+    justify-content: flex-start;
+}
+.page-selected{
+        background: blue;
+    color: #ffffff;
+}
+
+.btn-outline-secondary{
+    margin-bottom: 25px;
+}
+
+.offset-ms-4{
+    margin-top: 20px;
+}
+
+.page{
+    float: left;
+
+}
+
+#dtBasicExample_length {
+    padding-top: 25px;
+}
+
+.single {
+    width: 70px;
+}
+
+/*.modal {*/
+    /*display: inherit;*/
+/*}*/
+
+/*.error {*/
+  /*color: red;*/
+  /*margin-right: -650px;*/
+/*}*/
+/*.form-group {*/
+    /*margin-bottom: 10px;*/
+/*}*/
+.title{
+    width: 200px;
+    font-size: 18px;
+    color: gray;
+    font-weight: 699;
+    margin: 10px auto;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+.label--top{
+    float: left;
+    padding: .375rem .75rem;
+    line-height: 1.75rem;
+}
+
+.btn-secondary{
+    margin-bottom: 7px;
+}
+
+#btn-add{
+    margin-top: -8px;
+}
+
+.btn-edit{
+    display: inline-block;
+    padding: 5px 18px;
+}
+
+#btnEdit{
+    margin-top: -8px;
+}
