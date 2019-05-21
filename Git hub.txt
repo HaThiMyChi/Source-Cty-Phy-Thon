@@ -1,33 +1,33 @@
-Hu?ng d?n d�ng git co b?n
-I.  Gi?i thi?u Git:
+﻿Hướng dẫn dùng git cơ bản
+I.  Giới thiệu Git:
     https://blog.duyetdev.com/2015/04/git-va-cac-khai-niem-co-ban.html#.VyM70PmLTDc
-    * T�m t?t:
-      - Git d�ng d? qu?n l� phi�n b?n code, r?t thu?n l?i trong l�m vi?c nh�m th?m ch� l�m 1 m�nh.
-        Git c� nhi?u trang h? tr? nhu: github.com, bitbucket.com, ... kh�ng ph?i git l� ch? ri�ng trang github, git gi?ng nhu l� 1 chu?n
-        qu?n l� phi�n b?n, ngo�i ra c�n c� SVN l� 1 chu?n kh�c d? qu?n l� phi�n b?n (theo c�ch hi?u c?a t).
-      - C�c kh�i ni?m trong git:
-        + Repository (kho): l� thu m?c. Thu m?c tr�n github.com g?i l� remote (xa) repository (kho), c�n ? m�y t�nh l� local repository.
-        + Branch (nh�nh): v� d? t l�m 1 ph?n tr�n 1 nh�nh, m r? sang nh�nh kh�c l�m ch?c nang kh�c, sau n�y h?p l?i (merge)
-        + Remote (m�y ch?): kh?i gi?i th�ch, l�t v� d?
-        + add (th�m): sau khi l�m g� d� thay d?i th� add (th�m) c�i thay d?i d� v�o
-        + commit: ch?t thay d?i
-        + pull (k�o v?): l?y code c?a th?ng l�m chung d� push (d?y) l�n.
-        + push (d?y): dua code l�n remote repository, nghia l� d?y l�n cho t?i kia k�o v?
-      - V� d? th?c t?:
-        + T?i git v? c�i v�o m�y: https://git-scm.com/
-        + Ti?p l� ph?i t?o 1 remote repository (thu m?c tr�n github.com) d� l� ch? l�c push code s? l�n, repository d� c� 1 d?ng d?n, du�i l� *.git.
-          v� du: https://github.com/Haosvit/QLPV.git. Vi?c t?o n�y ph?i t?o tr�n trang github.com, l�n d� t�m n�t t?o ("New repository").
-        + T?o 1 thu m?c d? ch?a code du?i m�y t�nh. Thu m?c n�y s? li�n k?t v?i c�i thu m?c tr�n github sau n�y (l�m theo c�c bu?c du?i)
-        + Kh?i t?o git trong thu m?c m?i t?o: B?m chu?t ph?i ch?n "Git bash here" d? m? m�n h�nh console. G�: git init
-        + Li�n k?t n� v?i thu m?c ? github.com: cung ? m�n h�nh consolde m?i m? l�n, g�: git remote add origin <du?ng d?n t?i thu m?c tr�n github.com>
-          v� d?: git remote add origin https://github.com/Haosvit/QLPV.git
-        + Sau khi li�n k?t 2 thu m?c, l?y h?t n?i dung tr�n thu m?c ? github v?, tr�n console, g�: git pull origin master
-        + xong, d� l?y h?t n?i dung thu m?c tr�n github v?.
-        + Khi l�m g� d� thay d?i tr�n thu m?c ? m�y nh�, ph?i ADD sau d� COMMIT sau d� PUSH l�n github. L�m nhu sau:
-          ADD: m? git bash (m�n h�nh console) l�n, g�: git add *
-          COMMIT: cung tr�n bash, g�: git commit -m "n?i d?ng d� th?c hi?n"
-                  trong d� c�i trong d?u ngo?c k�p l� ghi ch� c?a vi?c commit, c�i n�y b?t bu?c nh?p
-          PUSH: cung tr�n bash, g�: git push origin master
-        + Khi ai d� push g� m?i l�n th� ? m�y l?y v? b?ng c�i: g� tr�n bash t?i thu m?c d� kh?i t?o git (git init): git pull origin master
-        + H?t, luy?n t?p b?ng c�ch t?o 1 repo tr?ng tr�n github c� nh�n.
+    * Tóm tắt:
+      - Git dùng để quản lý phiên bản code, rất thuận lợi trong làm việc nhóm thậm chí làm 1 mình.
+        Git có nhiều trang hỗ trợ như: github.com, bitbucket.com, ... không phải git là chỉ riêng trang github, git giống như là 1 chuẩn
+        quản lý phiên bản, ngoài ra còn có SVN là 1 chuẩn khác để quản lý phiên bản (theo cách hiểu của t).
+      - Các khái niệm trong git:
+        + Repository (kho): là thư mục. Thư mục trên github.com gọi là remote (xa) repository (kho), còn ở máy tính là local repository.
+        + Branch (nhánh): ví dụ t làm 1 phần trên 1 nhánh, m rẽ sang nhánh khác làm chức năng khác, sau này hộp lại (merge)
+        + Remote (máy chủ): khỏi giải thích, lát ví dụ
+        + add (thêm): sau khi làm gì đó thay đổi thì add (thêm) cái thay đổi đó vào
+        + commit: chốt thay đổi
+        + pull (kéo về): lấy code của thằng làm chung đã push (đẩy) lên.
+        + push (đẩy): đưa code lên remote repository, nghĩa là đẩy lên cho tụi kia kéo về
+      - Ví dụ thực tế:
+        + Tải git về cài vào máy: https://git-scm.com/
+        + Tiếp là phải tạo 1 remote repository (thư mục trên github.com) đó là chỗ lúc push code sẽ lên, repository đó có 1 đừng dẫn, đuôi là *.git.
+          ví du: https://github.com/Haosvit/QLPV.git. Việc tạo này phải tạo trên trang github.com, lên đó tìm nút tạo ("New repository").
+        + Tạo 1 thư mục để chứa code dưới máy tính. Thư mục này sẽ liên kết với cái thư mục trên github sau này (làm theo các bước dưới)
+        + Khởi tạo git trong thư mục mới tạo: Bấm chuột phải chọn "Git bash here" để mở màn hình console. Gõ: git init
+        + Liên kết nó với thư mục ở github.com: cũng ở màn hình consolde mới mở lên, gõ: git remote add origin <đường dẫn tới thư mục trên github.com>
+          ví dụ: git remote add origin https://github.com/Haosvit/QLPV.git
+        + Sau khi liên kết 2 thư mục, lấy hết nội dung trên thư mục ở github về, trên console, gõ: git pull origin master
+        + xong, đã lấy hết nội dung thư mục trên github về.
+        + Khi làm gì đó thay đổi trên thư mục ở máy nhà, phải ADD sau đó COMMIT sau đó PUSH lên github. Làm như sau:
+          ADD: mở git bash (màn hình console) lên, gõ: git add *
+          COMMIT: cũng trên bash, gõ: git commit -m "nội dụng đã thực hiện"
+                  trong đó cái trong dấu ngoặc kép là ghi chú của việc commit, cái này bắt buộc nhập
+          PUSH: cũng trên bash, gõ: git push origin master
+        + Khi ai đó push gì mới lên thì ở máy lấy về bằng cái: gõ trên bash tại thư mục đã khởi tạo git (git init): git pull origin master
+        + Hết, luyện tập bằng cách tạo 1 repo trống trên github cá nhân.
         
