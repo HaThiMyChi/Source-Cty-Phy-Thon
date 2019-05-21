@@ -1,0 +1,33 @@
+Hu?ng d?n dùng git co b?n
+I.  Gi?i thi?u Git:
+    https://blog.duyetdev.com/2015/04/git-va-cac-khai-niem-co-ban.html#.VyM70PmLTDc
+    * Tóm t?t:
+      - Git dùng d? qu?n lý phiên b?n code, r?t thu?n l?i trong làm vi?c nhóm th?m chí làm 1 mình.
+        Git có nhi?u trang h? tr? nhu: github.com, bitbucket.com, ... không ph?i git là ch? riêng trang github, git gi?ng nhu là 1 chu?n
+        qu?n lý phiên b?n, ngoài ra còn có SVN là 1 chu?n khác d? qu?n lý phiên b?n (theo cách hi?u c?a t).
+      - Các khái ni?m trong git:
+        + Repository (kho): là thu m?c. Thu m?c trên github.com g?i là remote (xa) repository (kho), còn ? máy tính là local repository.
+        + Branch (nhánh): ví d? t làm 1 ph?n trên 1 nhánh, m r? sang nhánh khác làm ch?c nang khác, sau này h?p l?i (merge)
+        + Remote (máy ch?): kh?i gi?i thích, lát ví d?
+        + add (thêm): sau khi làm gì dó thay d?i thì add (thêm) cái thay d?i dó vào
+        + commit: ch?t thay d?i
+        + pull (kéo v?): l?y code c?a th?ng làm chung dã push (d?y) lên.
+        + push (d?y): dua code lên remote repository, nghia là d?y lên cho t?i kia kéo v?
+      - Ví d? th?c t?:
+        + T?i git v? cài vào máy: https://git-scm.com/
+        + Ti?p là ph?i t?o 1 remote repository (thu m?c trên github.com) dó là ch? lúc push code s? lên, repository dó có 1 d?ng d?n, duôi là *.git.
+          ví du: https://github.com/Haosvit/QLPV.git. Vi?c t?o này ph?i t?o trên trang github.com, lên dó tìm nút t?o ("New repository").
+        + T?o 1 thu m?c d? ch?a code du?i máy tính. Thu m?c này s? liên k?t v?i cái thu m?c trên github sau này (làm theo các bu?c du?i)
+        + Kh?i t?o git trong thu m?c m?i t?o: B?m chu?t ph?i ch?n "Git bash here" d? m? màn hình console. Gõ: git init
+        + Liên k?t nó v?i thu m?c ? github.com: cung ? màn hình consolde m?i m? lên, gõ: git remote add origin <du?ng d?n t?i thu m?c trên github.com>
+          ví d?: git remote add origin https://github.com/Haosvit/QLPV.git
+        + Sau khi liên k?t 2 thu m?c, l?y h?t n?i dung trên thu m?c ? github v?, trên console, gõ: git pull origin master
+        + xong, dã l?y h?t n?i dung thu m?c trên github v?.
+        + Khi làm gì dó thay d?i trên thu m?c ? máy nhà, ph?i ADD sau dó COMMIT sau dó PUSH lên github. Làm nhu sau:
+          ADD: m? git bash (màn hình console) lên, gõ: git add *
+          COMMIT: cung trên bash, gõ: git commit -m "n?i d?ng dã th?c hi?n"
+                  trong dó cái trong d?u ngo?c kép là ghi chú c?a vi?c commit, cái này b?t bu?c nh?p
+          PUSH: cung trên bash, gõ: git push origin master
+        + Khi ai dó push gì m?i lên thì ? máy l?y v? b?ng cái: gõ trên bash t?i thu m?c dã kh?i t?o git (git init): git pull origin master
+        + H?t, luy?n t?p b?ng cách t?o 1 repo tr?ng trên github cá nhân.
+        
