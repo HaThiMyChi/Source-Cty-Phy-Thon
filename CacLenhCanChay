@@ -1,0 +1,62 @@
+Câu lệnh chạy project để hiển thi lên app
+https://console.cloud.google.com/appengine/versions?project=hachiproject&serviceId=default&versionssize=50
+D:\Chihtm\python_appEngine\python-docs-samples\appengine\standard
+gcloud app deploy
+
+Create new project:
+
+gcloud projects create [YOUR_PROJECT_NAME] --set-as-default
+
+gcloud components install app-engine-python
+
+From within the hello_world directory where the app's app.yaml configuration file is located, start the local development server with the following command:
+
+dev_appserver.py app.yaml
+
+To deploy your app to App Engine, run the following command from within the root directory of your application where the app.yaml file is located:
+
+gcloud app deploy
+
+To launch your browser and view the app at http://[YOUR_PROJECT_ID].appspot.com, run the following command:
+
+gcloud app browse
+
+https://mychi-name.appspot.com/
+
+thêm để add file mới vào khi thêm file
+trong file app.yaml
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: "2.6"
+  
+  trong file main.py
+  import os
+  import jinja2
+cwd = os.path.dirname(__file__)
+path = os.path.join(cwd, 'templates')
+jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(path))
+
+def get(self):
+  template = jinja_environment.get_template('index.html')
+  (file mình đã tạo để chứa html)
+  
+  Mở chạy Google Cloud SDK đểchạy và cài đặt
+  
+ https://cloud.google.com/datastore/docs/reference/libraries#client-libraries-install-python
+ https://cloud.google.com/appengine/docs/standard/python/ndb/
+ 
+ The Python NDB Client Library Overview
+ Gọi phương thức Put
+ 
+ https://cloud.google.com/appengine/docs/standard/python/ndb/creating-entity-models
+ 
+ 
+ 
+ Coi nêu sau này dùng
+ //    setTimeout(function(){
+        var page_size = $("#single").val();
+        loadPage();
+//    }, 6000);
+  

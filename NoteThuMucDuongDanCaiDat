@@ -1,0 +1,52 @@
+link vào thư mục cài đặt C:\Users\DUY\AppData\Local\Google\Cloud SDK
+
+có thể chọn Cloud SQL, Cloud Datastore, or MongoDB
+
+- Tất nhiên, ứng dụng của bạn có thể chạy trên Google Cloud Platform và sử dụng máy chủ MongoDB được lưu trữ bên ngoài Google Cloud Platform, nếu bạn thích
+
+GCP viết tắt (Google Cloud Platform)
+
+https://console.cloud.google.com/home/dashboard?project=hachiproject
+
+Running MongoDB on Google Compute Engine
+
+https://cloud.google.com/appengine/docs/standard/python/quickstart
+
+https://cloud.google.com/appengine/docs/standard/python/quickstart
+
+https://cloud.google.com/python/getting-started/tutorial-app
+
+https://cloud.google.com/appengine/docs/standard/python/quickstart
+https://cloud.google.com/python/getting-started/tutorial-app
+
+https://console.cloud.google.com/appengine/versions?authuser=0&project=hachiproject&serviceId=default&versionssize=50
+https://cloud.google.com/appengine/docs/standard/python/ndb/queries
+
+
+C:\Users\DUY\AppData\Local\Google\Cloud SDK>
+
+tạo mychi-name với app engine
+createTime: '2019-04-19T03:41:01.728Z'
+lifecycleState: ACTIVE
+name: mychi-name
+parent:
+  id: '530869441322'
+  type: organization
+projectId: mychi-name
+projectNumber: '905863522706'
+
+Trong môi trường này, ứng dụng có thể thực thi mã, lưu trữ và truy vấn dữ liệu trong Cloud Datastore, sử dụng thư của Máy ứng dụng, 
+tìm nạp URL và dịch vụ người dùng và kiểm tra yêu cầu web của người dùng và chuẩn bị phản hồi.
+
+
+từ search lấy dữ liệu lên list
+https://stackoverflow.com/questions/22997782/how-to-return-a-field-from-a-scoreddocument-in-gae-search-api-python
+
+https://www.gingersoftware.com/grammarcheck#.XNe2NugzbIU   (học tiếng anh)
+
+http://form.guide/jquery/validation-using-jquery-examples.html ( check javascript input validate)
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation (check javascript form validate)
+
+https://getbootstrap.com/docs/4.3/components/modal/ (model lam giao dien trang dang ky nay no)
+
+https://phppot.com/php/php-crud-with-search-and-pagination-using-jquery-ajax/ (làm theo có nhiều loại theo ajax vào kiểm tra để coi)

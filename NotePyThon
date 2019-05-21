@@ -1,0 +1,337 @@
+Note Python
+
+Python là ngôn ngữ lập trình cấp cao, với các ứng dụng trong nhiều lĩnh vực,
+bao gồm lập trình web, viết kịch bản, tính toán khoa học và trí tuệ nhân tạo.
+
+Trong phython để khai báo là chuỗi ghi chứ thì ta có 2 cách:
++ Cách 1: sử dụng dấu # dành cho ghi chứ 1 dòng
++ Cách 2: Sử dụng dấu "Nội dung ghi chú" để bao quanh nội dung cần ghi chứ(Có thể 1 hoặc nhiều dòng). Tuy nhiên cáCh này không phải lúc nào cũng hoạt động
+ (do hệ điều hành hoặc phiên bản) nên không nên sử dụng
+ 
+Trong phython có các kiểu dữ liệu căn bản thông dụng sau đây:
+
++ Kiểu số - Number:
++ Kiểu chuỗi - String
++ Kiểu bộ - tuple (1, 2.0, 3) (1,) ("Hello", 1,())
++ Danh sách -list: [4.8, -6] ['a', 'b']
++ Từ điển - dictoinary: {"Hanoi":"Vietnam", "Haiphong":"Vietnam", "Hochiminh":"Vietnam", "Netherlands":"Amsterdam", "France":"Paris"}
+
+*** Khai báo biến trong python
+Để khai báo biến trong python ta dùng cú pháp tênbien = giatri
+Một số lưu ý khi khai báo biến:
+
++ Biến không dùng được chứa chữ số đầu tiên
++ Biến không được chứa khoảng trắng
++ Biến không được là chữ có dấu (tiếng Anh)
+
+**** Các toán tử trong python
++ Số Mũ ** dùng để xác định số mũ của một chữ số
+Chia /, Nhân *, Chia lấy nguyên //, Chia lấy dư %, Phép cộng +, phép trừ -
+Chú ý: Phép chia lấy nguyên luôn trả về số không dư
+		Phép bình thường kết quả trả về có thể bị lẽ (có dư)
+		
+*** Chuyển đổi và ép kiểu dữ liệu trong python
+- Kiểm tra kiểu dữ liệu một biến thì ta dùng hàm type nhé các bạn
+type(variable)
+
+- Chuyển đổi loại này cũng được gọi là typecasting vì người dùng ép(thay đổi) kiểu dữ liệu của các đối tượng. Cú pháp như sau:
+(required_datatype)(expression)
+ví dụ  num_str = int(num_str)
+
+**** 
+	+ Chuyển đổi kiểu dữ liệu là chuyển đổi đối tượng từ một kiểu dữ liệu này sang kiểu dữ liệu khác
+	+ Chuyển đổi kiểu ngầm định được trình thông dịch python thực hiện tự động
+	+ python tự động chọn kiểu dữ liệu cao hơn để tránh mất dữ liệu trong chuyển đổi loại ngầm định
+	+ Chuyển đổi loại rõ ràng cũng dc gọi là ép kiểu, các loại dữ liệu của đổi tượng được chuyển đổi bằng cách sử dụng các hàm của người dùng
+	+ Trong ép kiểu việc mất dữ liệu có thể xảy ra khi chúng ta thực thi đối tượng theo kiểu dữ liệu cụ thể
+	
+***
+
+* Cú pháp if else:
+ 
+	if expression:
+		#statement
+	else :
+		#statement
+
+* Cú pháp if else lồng nhau:
+
+if expression1:
+    if expression2:
+        #statment
+    #statment
+else :
+    #statment
+
+* Cú pháp Elif
+Nghe Elif có vẻ hơi khác thường nhỉ cool, thông thường trong các ngôn ngữ PHP, C, C++ thì else if  chứ ko giống Python (Elif)
+if expression1:
+    #statement
+elif expression2 :
+    #statement
+		
+Như vậy trong Python ta không dùng cặp dấu ngoặc () để bao quanh điều kiện trong mệnh đề if,
+và ta cũng không dùng cặp dấu {} để bao quanh khối lệnh của mệnh đề if mà thay vào đó ta dùng dấu hai chấm (:) ở đầu để khai báo bắt đầu đoạn code
+ và kết thúc không có gì cả.
+ 
+ * while expression:
+   statement(s)
+   
+Trong đó:
+
+statement(s) là một lệnh đơn hoặc một tập lênh gồm nhiều lênh đơn. Nếu chỉ có một lệnh thì bạn có thể không cần khoảng trắng, tuy nhiên lời khuyên là bạn nên sử dụng khoảng trắng để chương trình được rõ ràng và dễ bảo trì hơn.
+expression có thể là một biến hoặc một biểu thức, nhưng bắt buộc giá trị của nó phải là TRUE hoặc FALSE.
+
+*** for iterating_var in sequence:
+   statements(s)
+Trong đó:
+
+iterating_var là biến dùng để lưu giá trị của các phần tử trong mỗi vòng lặp
+sequence la tập hợp các giá trị cần lặp
+statements(s) la các dòng lệnh xử lý trong thân vòng lặp
+
+*** Hàm range sẽ trả về một mảng trong đó tổng số phần tử sẽ phụ thuộc vào các tham số truyền vào. Cú pháp như sau
+	range(start, end, step)
+	
+	Trong đó:
+	. start là giá trị bắt đầu. 
+	. end là giá trị kết thúc
+	. step là khoảng cách giữa các phần tử hay còn gọi là bước nhảy
+	
+	Trường hợp có hai tham số
+Nếu bạn truyền 2 tham số thì sẽ tạo một mảng với bước nhảy là 1, phần tử đầu của mảng là start, phần tử cuối cùng của mảng là end - 1.
+
+Trường hợp có ba tham số
+Trường hợp này sẽ tạo một mảng như trường hợp 2 nhưng vì bước nhảy là step nên tổng số phần tử sẽ nhỏ hơn.
+***
+
+* Lệnh break trong python
+
+Lệnh break có công dụng chấm dứt vòng lặp ngay lập tức, nó không quan tâm đến điều kiện dừng
+của vòng lặp như thế nào, miễn gặp lệnh này là vòng lặ sẽ kết thúc.
+
+Trường hợp bạn sử dụng nhiều vòng lặp lồng nhau thì phạm vi tác dụng của break là vòng lặp gần nó nhất, tức là vòng lặp trong cùng.
+
+
+* lệnh continue
+Câu lệnh continue được sử dụng để bỏ qua phần còn lại của code bên trong thân vòng lặp và chỉ có tác dụng cho lần lặp hiện tại. Vòng lặp ko kết thúc mà tiếp tục với lần lặp tiếp theo
+
+*** Chú ý:Trên là cách sử dụng break và continue trong python, đây là hai lệnh sử dụng khá nhiều nên rất quan trọng. Với lệnh break thì nó có nhiệm vụ dùng mọi hoạt động của vòng lặp, thoát một cách đột ngột. Còn với lệnh continue thì nó sẽ bỏ qua lần lặp hiện tại và nhảy đến lần lặp tiếp theo
+
+CÚ PHÁP TẠO FUNCTION:
+
+def  function_name(parameters):
+	""" docstring"""
+	statement(s)
+
+Trong đó các thành phàn được giải thích như sau:
+. def là từ khóa bắt buộc dùng để tạo function, nó được đặt tại vị trí đầu tiên của function
+. function_name là tên của function mà bạn muốn đặt, ví dụ bạn viết function kiểm tra số lớn nhất thì có thể đặt tên là number_max
+.docstring là phần mô tả ý nghĩa của function, cái này do bạn tự nhập vào để sau này dễ dàng hiểu ý nghĩa của function mà ko cần phải đọc lại toàn bộ code
+.statement(s) là những dòng lệnh xử lý bên trong function
+.parameters là các tham số truyền vào của function
+
+* Cách gọi function vd greet('Paul')
+*  Tham số không giới hạn hay còn gọi là tham số Arbitrary. Khi sử dụng tham số này thì bạn có thể truyền bao nhiêu cũng được lúc gọi hàm.
+
+Chú ý: Để tạo một tham số không giới hạn thì bạn thêm ký tự * đằng trước tham số đó.
+ Hãy xem ví dụ dưới đây.
+
+def greet(*names):
+   """This function greets all
+   the person in the names tuple."""
+ 
+   # names is a tuple with arguments
+   for name in names:
+       print("Hello",name)
+ 
+greet("Monica","Luke","Steve","John")
+
+2. ƯU ĐIỂM VÀ NHƯỢC ĐIỂM CỦA ĐỆ QUY
+Ưu điềm: 
+	. Các hàm đệ quy làm cho mã trông sạch sẽ
+	. Một tác vụ phức tạp có thể được chia thành các vấn đề phụ đơn giản hơn bằng cách sử dụng đệ quy
+	. Tạo trình tự dễ dàng với đệ quy là sử dụng một số lần lặp lồng nhau
+NHược điểm:
+	. Đôi khi logic đằng sau đệ quy rất khó theo dõi
+	. Chi phí gọi đệ quy rất tốn kém (Không hiệu quả) vì chúng chiếm rất nhiều bộ nhớ và thời gian
+	. các hàm đệ quy khó gỡ lỗi
+
+***** lambda các hàm ẩn danh 
+	lambda arguments: expression
+*****
+
+*** kết hợp với filter() hàm filter có công dụng là lọc dữ liệu theo tham số truyền vào, tham số đầu tiên là hàm kiểm tra điều kiện lọc, tham số thứ hai là dữ liệu cần lọc.
+*** hàm map có công dụng là lặp qua từng phần tử và thay đổi giá trị của nó dựa vào hai tham số, tham số đầu tiên là một hàm dùng để xử lý dữ liệu và trả kết quả về, tham số thứ hai  dữ liệu cần lặp
+
+*** Biến toàn cục 
+Một biến được khai báo bên ngoài hàm hoặc trong phạm vi toàn cục được gọi là biến toàn cục. Điều này có nghĩa, biến toàn cục có thể được truy cập bên trong hoặc bên ngoài hàm
+
+*** Biến cục bộ
+Trong phython biến cục bộ được hiểu là biến được khai báo bên trong hàm hoặc phạm vi cục bộ, những biến này gọi là biến cục bộ
+
+Python hỗ trợ số nguyên, số dấu phẩy động và số phức. Chúng được định nghĩa là lớp int, float và lớp complex trong Python.
+
+Integer và float được phân biệt bằng dấu chấm động (.), nếu một số có dấu chấm động là kiểu float, ngược lại là kiểu int . 5 thuộc kiểu int, trong khi 5.0 thuộc kiểu float.
+
+Số phức được viết dưới dạng x + yj, trong đó x là phần thực và y là phần ảo.
+
+Chúng ta có thể sử dụng hàm type() để biết biến đang thuộc lớp nào, và hàm isinstance() để kiểm tra xem nó có thuộc về một lớp cụ thể nào đó không.
+
+complex là biểu diễn dạng số phức ví dụ complex('3+5j')
+
+
+>>> (1.1 + 2.2) == 3.3
+False
+Để khắc phục vấn đề này, chúng ta có thể sử dụng mô-đun decimal.
+
+Chúng ta thường sử dụng Decimal trong các trường hợp sau.
+
+Khi đang làm cho các ứng dụng tài chính cần đại diện thập phân chính xác.
+Khi muốn kiểm soát mức độ chính xác cần thiết.
+Khi muốn thực hiện khái niệm về số thập phân có ý nghĩa.
+Khi muốn các hoạt động được thực hiện như chúng ta đã làm ở trường
+
+PHÂN SỐ fractions
+
+List hay còn gọi là array, là một kiểu dữ liệu rất quan trọng ở bất kỳ ngôn ngữ nào như php, c/c++ nên việc nắm vững nó là rất cần thiết
+
+Thay đổi giá trị của phần tử
+Như ta biết List bản chất là Array nên mỗi phần tử sẽ có một chỉ số đánh dấu riêng, vị trí đầu tiên là 0, tiếp theo là 1, 2, 3, 4, ...
+Ví dụ bạn có một List gồm 5 phần tử thì lần lược chỉ số đánh dấu của các phần tử là: 0, 1, 2, 3, 4, 5.
+Như vậy để thay đổi giá trị của phần tử nào thì ta sẽ dựa vào số chỉ mục đánh dấu này.
+
+*** Để đếm chiều dài của LIST thì ta sử dụng hàm len.
+
+*** Lặp qua từng phần tử thì ta sử dụng vòng lặp for hoặc vòng lặp while, kết hợp với hàm len để đếm tổng số phần tử của list
+
+*** Trong Python, hàm range() có chức năng tạo ra một danh sách các số nguyên liên tục
+range(start, stop, step)
+
+***  Kiểm tra một giá trị có tồn tại trong List
+  Ta phải sử dụng lênh if để kiểm tra. Như ví dụ dưới đây kiểm tra chuỗi "Apple" có tồn tại trong list không.
+
+	thislist = ["apple", "banana", "cherry"]
+	if "apple" in thislist:
+	  print("Yes, 'apple' is in the fruits list")
+	  
+	Thêm phần tử vào List
+Nếu PHP sử dụng cú pháp $var[] = value để thêm một phần tử vào array
+ thì trong Python phải sử dụng phương thức append của List.
+ 
+ Xóa phần tử ra khỏi List
+Cách 1: Để xóa một phần tử ra khỏi List thì ta sử dụng phương thức remove() được tích hợp sẵn trong List.
+ 
+ THÊM PHẦN TỬ VÀO LIST THÌ DÙNG APPEND
+ CÁCH 1: XÓA PHẦN TỬ RA KHỎI LIST THÌ DÙNG REMOVE
+ CÁCH 2: XÓA PHẦN TỬ CÓ SỐ THỨ TỰ INDEX NÀO ĐÓ THÌ TA SỬ DỤNG POP(truyền vào phần tử thứ muốn xóa) Nếu bạn không truyền index vào thì mặc định nó sẽ xóa phần tử cuối cùng 
+ CÁCH 3: sử dụng từ khóa DEL ví dụ del sthislist[0] là xóa phần tử đầu, del còn có thể xá toàn bộ phần tử như sau ví dụ del thislist
+ THIẾT LẬP LIST RỖNG THÌ SỬ DỤNG PHƯƠNG THỨC CLEAR() ví dụ thislist.clear()
+ 
+ 
+Danh sách functions	Mô tả
+List clear()	Xóa tất cả các item bên trong list.
+List copy()	Trả về một bản sao thô của List.
+List sort()	Sắp xếp các phần tử tăng hoặc giảm dần
+List reverse()	Đảo ngược các phần tử trong List
+List pop()	Xóa một phần tử được chỉ định ra khỏi list
+List count()	Đếm tổng số lần xuất hiện của một giá trị nào đó.
+List index()	Tìm phần tử đã cho trong danh sách và trả về vị trí của nó.
+List remove()	Xóa phần tử có giá trị định sẵn ra khỏi List
+List insert()	Dùng để thêm một phần tử mới vào vị trí index được định sẵn.
+List extend()	Gộp list A và list B
+List append()	Bổ sung một phần tử vào List hiện tại
+
+Trong python, kiểu dữ liệu Tuple tương tự như list, sự khác biệt giữa chúng là ta không thể thay đổi các phần tử của tuple, trừ khi phần tử đó là một list
+
+Ưu điểm của Tuple so với List
+	. Chúng tôi thường sử dụng tuple cho các kiểu dữ liệu không đồng nhất (khác nhau) và list cho các kiểu dữ liệu đòn nhất (tương tự)
+	 . Vì tuple là bất biến, nên việc lặp qua tuple nhanh hơn so với list
+	 .tuple có thể được sử dụng làm khóa cho dictionary. với list thì điều này là không thể
+	 . Nếu bạn có dữ liệu ít thay đổi, việc triển khai nó dưới dạng tuple sẽ đảm bảo rằng nó vẫn được bảo vệ chống ghi
+	 
+Một tuple được tạo bằng cách đặt tất cả các mục (phần tử) bên trong dấu ngoặc đơn (), 
+được phân tách bằng dấu phẩy. Các dấu ngoặc là tùy chọn có hoặc không nhưng tốt nhất là sử dụng nó
+
+Một tuple có thể có nhiều phần tử và mỗi phần tử có thể thuộc các kiểu dữ liệu khác nhau (int, float, list, string, v.v.).
+
+Cú pháp
+my_tuple = (element1, element2, ...)
+Một tuple có thể có nhiều phần tử và mỗi phần tử có thể thuộc các kiểu dữ liệu khác nhau (int, float, list, string, v.v.).
+
+Việc tạo một Tuple chỉ có một phần tử sẽ phức tạp hơn một xíu, bởi vì trường hợp này thì Python sẽ dễ bị nhầm lẫn sang kiểu string,
+vì vậy ta phải bổ sung thêm dấu phẩy ở cuối để trình biên dịch Python nhận biết đó là một Tuple.
+
+
+3. Truy cập các phần tử trong Tuple
+
+Indexing
+Chúng ta có thể sử dụng toán tử chỉ mục [] để truy cập một mục trong một tuple nơi chỉ mục bắt đầu từ 0.
+Ví dụ một tuple có 6 phần tử sẽ có chỉ số từ 0 đến 5, nên nếu bạn cố gắng truy cập đến cá phần tử khác như (6, 7, ...) thì sẽ gây ra lỗi IndexError.
+
+Chỉ mục phải là một số nguyên (int), vì vậy bạn không thể sử dụng kiểu float hoặc các loại khác, điều này sẽ dẫn đến TypeError.
+
+ tuple lồng nhau được truy cập bằng cách sử dụng lập chỉ mục lồng nhau, như trong ví dụ dưới đây.
+ Ví dụ tuple lồng nhau
+ # nested tuple
+n_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+
+# nested index
+# Output: 's'
+print(n_tuple[0][3])
+
+Negative Indexing
+Python cho phép lập chỉ mục số âm, chỉ số -1 đề cập đến phần tử cuối cùng, -2 cho phần tử cuối cùng thứ hai, v.v.
+
+Slicing
+Chúng ta có thể truy cập vào một loạt các phần tử trong một tuple bằng cách sử dụng toán tử slicing dấu hai chấm ":".
+
+XÓA MỘT TUPLE BẰNG CÁCH DÙNG TỪ KHÓA DEL (CHỈ XÓA ĐƯỢC TOÀN BỘ)
+
+Trong lớp đối tượng Tuple hỗ trợ hai phương thức, đó là:
+
+Method	Description
+count(x)	Đếm số lần xuất hiện của một phần tử
+index(x)	Trả về chỉ mục của phần tử cần tìm
+
+Kiểm tra phần tử có xuất hiện trong Tuple
+Để kiểm tra một phần tử có xuất hiện trong tuple không thì ta dùng toán tử in
+
+Duyệt qua từng phần tử của Tuple
+Để lặp qua từng phần tử của Tuple thì ta có thể sử dụng vòng lặp for.
+
+***** isinstance () ***
+Phương thức Python isinstance () trả về True nếu một đối tượng được chỉ định thuộc loại đã chỉ định, nếu không, nó trả về Sai.
+ Nếu tham số kiểu là bộ dữ liệu, hàm này sẽ trả về True nếu đối tượng là một trong các loại trong bộ dữ liệu. Hàm isinstance ()
+ kiểm tra xem đối tượng là đối số đầu tiên là một thể hiện hay lớp con của lớp classinfo là đối số thứ hai.
+
+
+**** ndb queries trong cloud appengine***
+ query.filter(ndb.OR(cls.name == key_word, cls.age == key_word, cls.national == key_word, cls.position, cls.salary))
+ search tất cả
+ 
+ filter lấy từng dòng
+ fetch() trên danh sách
+ 
+ *** memcache
+ lưu thì .add, lấy thì .get
+ memcache.add(key="weather_USA_9810
+ 
+ .parent trong javascript thì lùi về 1 tag ví dụ trong table thì <button> lùi về th
+ .parent(): Lấy thành phần cha trực tiếp của mỗi thành phần trong những thành phần phù hợp, có thể kết hợp vào bộ chọn (selector).
+ .find(): Giúp tìm thành phần trong thành phần cha.
+ 
+ 
+ hidden = an hoac hien id cung dc
+ Truyen du lieu qua input
+ 
+ Khi code ajax rồi thì form ko truyền đi action thay (url), method thì post và get đã truyền rồi nên bên form ko cần truyền, và khi viết ajax button ko để type="submit" mà bỏ luôn
+ https://codepedia.info/jquery-get-table-cell-td-value-div/
+ 
+ https://drive.google.com/drive/folders/1ct7emajk07DOK0k5Sn5j-3yvLHWqnrW7?fbclid=IwAR3Cd2eXMQ72hK5RAUKzdwhHI8YhOaUAip5j0rvY-MEOLn3mOYmoXVUMDZQ
+
+	
+
+
+
+ 

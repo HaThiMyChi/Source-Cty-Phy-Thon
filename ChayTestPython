@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+ <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form method="POST">
+  Title:<br>
+  <input type="text" name="title" value="Mickey">
+  <br>
+  Content:<br>
+  <input type="text" name="content" value="Mouse">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2>HTML Forms</h2>
+<form method="POST">
+  Title:<br>
+  <input type="text" name="title" value="Mickey">
+  <br>
+  Content:<br>
+  <input type="text" name="content" value="Mouse">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+</body>
+</html>
+
+
+
+
+# Copyright 2016 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os
+import jinja2
+import logging
+cwd = os.path.dirname(__file__)
+path = os.path.join(cwd, 'templates')
+jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(path))
+
+
+import webapp2
+from google.appengine.ext import ndb
+import datetime
+import urllib
+# import snippets
+
+class Greeting(ndb.Model):
+	id = ndb.IntegerProperty()
+	name = ndb.StringProperty()
+	age = ndb.IntegerProperty()
+	national = ndb.StringProperty()
+	position = ndb.StringProperty()
+	salary = ndb.IntegerProperty()
+
+
+	@classmethod
+	def add_player(cls, params):
+		player = cls()
+		player.name = params['name']
+		player.age = params['age']
+		player.national = params['national']
+		player.position = params['position']
+		player.salary = params['salary']
+		player.put()
+
+	# def edit_book(cls, prams):
+	# 	query = Greeting.query()  # Retrieve all Account entitites
+	# 	query = query.filter(Greeting.book_id == prams['book_id'])
+	# 	book = query.get()
+	# 	if (not(query)) :
+	# 		return 'Id khong ton tai!'
+	# 	else :
+	# 		book.title = prams['title']
+	# 		book.content = prams['content']
+	# 		book.put()
+
+
+
+class MainPage(webapp2.RequestHandler):
+
+	def get_book(self,name, age, national, position,  salary):
+
+		params = {'name' : name, 'age': age, 'national': national, 'position' : position, 'salary': salary }
+		Greeting.add_book(params)
+
+	def get(self):
+		template = jinja_environment.get_template('index.html')
+		values ={'abc':'hello'}
+		#snippets.fetch_good_articles_using_gql_with_inlined_bind()
+		self.response.out.write(template.render(values))
+
+	def post(self):
+
+		name = self.request.get('name')
+		age = self.request.get('age')
+		national = self.request.get('national')
+		position = self.request.get('position')
+		salary = self.request.get('salary')
+		self.get_book(name, age, national, position, salary)
+
+
+class CreatePage(webapp2.RequestHandler):
+	def get(self):
+		template = jinja_environment.get_template('add.html')
+		values ={'abc':'hello'}
+		#snippets.fetch_good_articles_using_gql_with_inlined_bind()
+		self.response.out.write(template.render(values))
+
+
+	def get_player(self,name, age, national, position,  salary):
+
+		params = {'name' : name, 'age': age, 'national': national, 'position' : position, 'salary': salary }
+		Greeting.add_player(params)
+
+
+	def post(self):
+
+		name = self.request.get('name')
+		age = self.request.get('age')
+		national = self.request.get('national')
+		position = self.request.get('position')
+		salary = self.request.get('salary')
+		self.get_player(name, age, national, position, salary)
+
+
+class SubmitForm(webapp2.RequestHandler):
+	def post(self):
+		guestbook_name = self.request.get('guestbook_name')
+		greeting = Greeting(parent=ndb.Key("Book", guestbook_name or "*notitle*"),
+					content = self.request.get('content'))
+
+		greeting.put()
+
+		self.redirect('/?' + urllib.urlencode({'guestbook_name': guestbook_name}))
+
+
+
+app = webapp2.WSGIApplication([
+    ('/', MainPage),
+    ('/sign', SubmitForm),
+    ('/create', CreatePage),
+    ('/add', CreatePage),
+], debug=True)
+
