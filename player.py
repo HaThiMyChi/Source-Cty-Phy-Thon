@@ -77,8 +77,9 @@ class Player(ndb.Model):
 		return False
 
 	@classmethod
-	def edit_player(cls, id, params):
-		player = cls.get_by_id(int(id))
+	def edit_player(cls, params):
+		logging.debug(int(params['id']))
+		player = cls.get_by_id(int(params['id']))
 		if player is not None:
 			player.name = params['name']
 			player.age = int(params['age'])

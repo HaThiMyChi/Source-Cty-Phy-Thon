@@ -188,14 +188,14 @@
             url: url,
             method: "POST",
             data: {name: name, age: age, national: national, position: position, salary: salary},
-            success: function(data) {
-               console.log(data);
+//            success: function(data) {
+//               console.log(data);
 //                var res = JSON.parse(data);
 //                var html = '';
 //                html += loadTable(res.players);
 //                $(obj ).find('table tbody').html(html);
 //                buildPaging(obj,res);
-                }
+//                }
 //            error: function(jqXHR, textStatus, errorThrown){
 //               alert('jqXHR:' + jqXHR + ' textStatus: '+ textStatus + ' errorThrown: '+ errorThrown);
 //            }
@@ -221,12 +221,12 @@
        showEdit = function(id, name, age, national, position, salary) {
            //var url = '/edit';
             $.ajax({
-           // url: '/edit',
+            url: '/edit',
             method: "POST",
             data: {id: id, name: name, age: age, national: national, position: position, salary: salary},
-            success: function(data) {
-                console.log(data);
-                }
+//            success: function(data) {
+//                console.log(data);
+//                }
             });
         };
     });
@@ -262,7 +262,7 @@
     $(function(){
         changeEdit = function(){
             $('#btnEdit').click(function(){
-                var id =  int($('#Id1').val());
+                var id =  $('#Id1').val();
                 var name = $('#name1').val();
                 var age = parseInt($('#age1').val(), 10);
                 var national = $('#national1').val();

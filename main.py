@@ -39,13 +39,7 @@ class MainPage(webapp2.RequestHandler):
 		self.response.out.write(template.render(values))
 
 	def post(self):
-
-		name = self.request.get('name')
-		age = self.request.get('age')
-		national = self.request.get('national')
-		position = self.request.get('position')
-		salary = self.request.get('salary')
-		self.get_book(name, age, national, position, salary)
+		pass
 
 class AddPlayer(webapp2.RequestHandler):
 	def get(self):
@@ -123,13 +117,13 @@ class RemovePlayer(webapp2.RequestHandler):
 
 
 class EditPlayer(webapp2.RequestHandler):
-	def get(self):
-		id = self.request.get('id')
-		# logging.debug(id)
-		player = Player.get_by_id(int(id))
-		values = {'player': player.to_dict()}
-		template = jinja_environment.get_template('edit.html')
-		self.response.out.write(template.render(values))
+	# def get(self):
+	# 	id = self.request.get('id')
+	# 	# logging.debug(id)
+	# 	player = Player.get_by_id(int(id))
+	# 	values = {'player': player.to_dict()}
+	# 	template = jinja_environment.get_template('edit.html')
+	# 	self.response.out.write(template.render(values))
 	def post(self):
 		id = self.request.get('id')
 		name = self.request.get('name')
@@ -137,14 +131,17 @@ class EditPlayer(webapp2.RequestHandler):
 		national = self.request.get('national')
 		position = self.request.get('position')
 		salary = self.request.get('salary')
-		params = {
+		params ={
+			'id': id,
 			'name': name,
 			'age': age,
 		    'national': national,
 		    'position': position,
 		    'salary': salary
 		}
-		player = Player.edit_player(id,params)
+		logging.debug(id)
+		logging.debug(params)
+		player = Player.edit_player(params)
 		if player is not None:
 			data = search.create_player(player)
 			search.add_player_to_index(data)
